@@ -1,0 +1,14 @@
+C:\Users\lucas\source\repos\Bludata\Suppliers\bin\Debug\Suppliers.exe.config
+C:\Users\lucas\source\repos\Bludata\Suppliers\bin\Debug\Suppliers.exe
+C:\Users\lucas\source\repos\Bludata\Suppliers\bin\Debug\Suppliers.pdb
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Form1.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Forms.NewCompanyForm.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Properties.Resources.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.csproj.GenerateResource.cache
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.exe
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.pdb
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Forms.NewSupplierForm.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Forms.CompaniesListForm.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Forms.SuppliersListForm.resources
+C:\Users\lucas\source\repos\Bludata\Suppliers\obj\Debug\Suppliers.Forms.Main.resources
