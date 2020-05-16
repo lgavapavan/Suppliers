@@ -46,7 +46,7 @@ namespace Suppliers
             }
             else
             {
-                MessageBox.Show("No companies were added yet.", "Empty List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No companies were added yet.", "Empty List", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -60,7 +60,7 @@ namespace Suppliers
             }
             else
             {
-                MessageBox.Show("No companies were added yet.", "Empty List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You need to save at least one company before adding suppliers", "No companies were added yet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -73,7 +73,7 @@ namespace Suppliers
             }
             else
             {
-                MessageBox.Show("There are no suppliers added yet.", "Empty List", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There are no suppliers added yet.", "Empty List", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

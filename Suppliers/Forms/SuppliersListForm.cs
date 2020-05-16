@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,21 +48,25 @@ namespace Suppliers.Forms
             dt.Columns.Add("Date Saved", typeof(DateTime));
             dt.Columns.Add("Area Code", typeof(string));
             dt.Columns.Add("Phone", typeof(string));
-            
-            for (int i = 0; i <= this.Suppliers.Count - 1; i++)
-            {
-                foreach (var item in this.Suppliers[i].Phones)
-                {
 
-                    DataRow dr = dt.NewRow();
-                    dr["Supplier's Company"] = this.Suppliers[i].Name;
-                    dr["Company"] = this.Suppliers[i].Company.CompanyName;
-                    dr["Document Type"] = DocumentTypes.CNPJ.ToString();
-                    dr["Document"] = this.Suppliers[i].Documents[0].DocumentNumber;
-                    dr["Date Saved"] = this.Suppliers[i].DateSaved;
-                    dr["Area Code"] = item.AreaCode;
-                    dr["Phone"] = item.Number;
-                    dt.Rows.Add(dr);
+            List<Supplier> suppliers = this.Suppliers;
+            if (suppliers != null)
+            {
+                for (int i = 0; i <= this.Suppliers.Count - 1; i++)
+                {
+                    foreach (var item in this.Suppliers[i].Phones)
+                    {
+
+                        DataRow dr = dt.NewRow();
+                        dr["Supplier's Company"] = this.Suppliers[i].Name;
+                        dr["Company"] = this.Suppliers[i].Company.CompanyName;
+                        dr["Document Type"] = DocumentTypes.CNPJ.ToString();
+                        dr["Document"] = this.Suppliers[i].Documents[0].DocumentNumber;
+                        dr["Date Saved"] = this.Suppliers[i].DateSaved;
+                        dr["Area Code"] = item.AreaCode;
+                        dr["Phone"] = item.Number;
+                        dt.Rows.Add(dr);
+                    }
                 }
             }
 
@@ -82,34 +87,38 @@ namespace Suppliers.Forms
             dt.Columns.Add("Area Code", typeof(string));
             dt.Columns.Add("Phone", typeof(string));
 
-            for (int i = 0; i <= this.IndividualEntities.Count - 1; i++)
+            List<IndividualEntity> individualEntities = this.IndividualEntities;
+            if (individualEntities != null)
             {
-                foreach (var item in this.IndividualEntities[i].Phones)
+                for (int i = 0; i <= this.IndividualEntities.Count - 1; i++)
                 {
-                    DataRow dr = dt.NewRow();
-
-                    dr["Supplier's Company"] = this.IndividualEntities[i].Name;
-                    dr["Company"] = this.IndividualEntities[i].Company.CompanyName;
-                    dr["Document Type"] = DocumentTypes.CPF.ToString();
-                
-                    foreach (var document in this.IndividualEntities[i].Documents)
+                    foreach (var item in this.IndividualEntities[i].Phones)
                     {
-                        if (document.DocumentType == DocumentTypes.CPF)
+                        DataRow dr = dt.NewRow();
+
+                        dr["Supplier's Company"] = this.IndividualEntities[i].Name;
+                        dr["Company"] = this.IndividualEntities[i].Company.CompanyName;
+                        dr["Document Type"] = DocumentTypes.CPF.ToString();
+                
+                        foreach (var document in this.IndividualEntities[i].Documents)
                         {
-                            dr["Document"] = document.DocumentNumber;
+                            if (document.DocumentType == DocumentTypes.CPF)
+                            {
+                                dr["Document"] = document.DocumentNumber;
+                            }
+                            else if (document.DocumentType == DocumentTypes.RG)
+                            {
+                                dr["RG"] = document.DocumentNumber;
+                            }
                         }
-                        else if (document.DocumentType == DocumentTypes.RG)
-                        {
-                            dr["RG"] = document.DocumentNumber;
-                        }
+
+                        dr["Birth Date"] = this.IndividualEntities[i].BirthDate.Date;
+                        dr["Date Saved"] = this.IndividualEntities[i].DateSaved;
+                        dr["Area Code"] = item.AreaCode;
+                        dr["Phone"] = item.Number;
+
+                        dt.Rows.Add(dr);
                     }
-
-                    dr["Birth Date"] = this.IndividualEntities[i].BirthDate.Date;
-                    dr["Date Saved"] = this.IndividualEntities[i].DateSaved;
-                    dr["Area Code"] = item.AreaCode;
-                    dr["Phone"] = item.Number;
-
-                    dt.Rows.Add(dr);
                 }
             }
 
@@ -263,7 +272,7 @@ namespace Suppliers.Forms
             {
                 foreach (var entity in individualEntities)
                 {
-                    if (entity.Name == txtSupplierName.Text)
+                    if (entity.Name.ToString().ToLower().Contains(txtSupplierName.Text.ToLower()))
                     {
                         foreach (var phone in entity.Phones)
                         {
@@ -316,7 +325,7 @@ namespace Suppliers.Forms
             {
                 foreach (var entity in suppliers)
                 {
-                    if (entity.Name == txtSupplierName.Text)
+                    if (entity.Name.ToString().ToLower().Contains(txtSupplierName.Text.ToLower()))
                     {
                         foreach (var phone in entity.Phones)
                         {
@@ -356,7 +365,9 @@ namespace Suppliers.Forms
                 {
                     foreach (var document in entity.Documents)
                     {
-                        if (document.DocumentNumber == txtDocument.Text)
+                        string docNumber = Regex.Replace(document.DocumentNumber.ToString(), "[^0-9a-zA-Z]", "");
+                        string searchDocNumber = Regex.Replace(txtDocument.Text, "[^0-9a-zA-Z]", "");
+                        if (docNumber.Contains(searchDocNumber))
                         {
                             foreach (var phone in entity.Phones)
                             {
@@ -411,7 +422,9 @@ namespace Suppliers.Forms
             {
                 foreach (var entity in suppliers)
                 {
-                    if (entity.Documents[0].DocumentNumber == txtDocument.Text)
+                    string docNumber = Regex.Replace(entity.Documents[0].DocumentNumber.ToString(), "[^0-9a-zA-Z]", "");
+                    string searchDocNumber = Regex.Replace(txtDocument.Text, "[^0-9a-zA-Z]", "");
+                    if (docNumber.Contains(searchDocNumber))
                     {
                         foreach (var phone in entity.Phones)
                         {

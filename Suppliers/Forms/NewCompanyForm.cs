@@ -79,12 +79,12 @@ namespace Suppliers.Forms
             try
             {
                 IsEmpty(txtCompanyName.Text, "Company's Name");
-                IsEmpty(txtDocument.Text, "Document");
+                IsEmpty(txtDocument.Text, "Document Number");
                 return true;
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "All fields must be filled to save the company.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "All fields must be filled to save the company.", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
         }
