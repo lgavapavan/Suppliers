@@ -127,39 +127,7 @@ namespace Suppliers.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (radioFilterByDate.Checked)
-            {
-                dgvIndividualSuppliers.DataSource = null;
-                dgvIndividualSuppliers.Refresh();
-                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByDate();
-                
-                dgvSuppliers.DataSource = null;
-                dgvSuppliers.Refresh();
-                dgvSuppliers.DataSource = SearchLegalSupplierByDate();
-
-            }
-            else if (radioFilterBySupplierName.Checked)
-            {
-                dgvIndividualSuppliers.DataSource = null;
-                dgvIndividualSuppliers.Refresh();
-                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByName();
-
-                dgvSuppliers.DataSource = null;
-                dgvSuppliers.Refresh();
-                dgvSuppliers.DataSource = SearchLegalSupplierByName();
-
-            }
-            else if (radioFilterByDocument.Checked)
-            {
-                dgvIndividualSuppliers.DataSource = null;
-                dgvIndividualSuppliers.Refresh();
-                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByDocument();
-
-                dgvSuppliers.DataSource = null;
-                dgvSuppliers.Refresh();
-                dgvSuppliers.DataSource = SearchLegalSupplierByDocument();
-
-            }
+            Search();
         }
 
         private DataTable SearchIndividualSupplierByDate()
@@ -397,6 +365,7 @@ namespace Suppliers.Forms
 
                                 dtIndividualSupplier.Rows.Add(dr);
                             }
+                            break;
                         }
                         
                     }
@@ -447,6 +416,64 @@ namespace Suppliers.Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            ClearFilters();
+            txtDocument.Clear();
+            txtSupplierName.Clear();
+        }
+
+        private void txtSupplierName_KeyUp(object sender, KeyEventArgs e)
+        {
+            Search();
+        }
+
+        private void txtDocument_KeyUp(object sender, KeyEventArgs e)
+        {
+            Search();
+        }
+        private void dtpDateSaved_ValueChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void Search()
+        {
+            if (radioFilterByDate.Checked)
+            {
+                dgvIndividualSuppliers.DataSource = null;
+                dgvIndividualSuppliers.Refresh();
+                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByDate();
+
+                dgvSuppliers.DataSource = null;
+                dgvSuppliers.Refresh();
+                dgvSuppliers.DataSource = SearchLegalSupplierByDate();
+
+            }
+            else if (radioFilterBySupplierName.Checked)
+            {
+                dgvIndividualSuppliers.DataSource = null;
+                dgvIndividualSuppliers.Refresh();
+                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByName();
+
+                dgvSuppliers.DataSource = null;
+                dgvSuppliers.Refresh();
+                dgvSuppliers.DataSource = SearchLegalSupplierByName();
+
+            }
+            else if (radioFilterByDocument.Checked)
+            {
+                dgvIndividualSuppliers.DataSource = null;
+                dgvIndividualSuppliers.Refresh();
+                dgvIndividualSuppliers.DataSource = SearchIndividualSupplierByDocument();
+
+                dgvSuppliers.DataSource = null;
+                dgvSuppliers.Refresh();
+                dgvSuppliers.DataSource = SearchLegalSupplierByDocument();
+
+            }
+        }
+
+        private void ClearFilters()
+        {
             dgvIndividualSuppliers.DataSource = null;
             dgvIndividualSuppliers.Refresh();
             dgvIndividualSuppliers.DataSource = LoadIndividualSuppliersList();
@@ -454,6 +481,44 @@ namespace Suppliers.Forms
             dgvSuppliers.DataSource = null;
             dgvSuppliers.Refresh();
             dgvSuppliers.DataSource = LoadSuppliersList();
+        }
+
+        private void radioFilterByDocument_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFilterByDocument.Checked == false)
+            {
+                txtDocument.Enabled = false;
+                txtDocument.Clear();
+            }
+            else
+            {
+                txtDocument.Enabled = true;
+            }
+        }
+
+        private void radioFilterBySupplierName_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFilterBySupplierName.Checked == false)
+            {
+                txtSupplierName.Enabled = false;
+                txtSupplierName.Clear();
+            }
+            else
+            {
+                txtSupplierName.Enabled = true;
+            }
+        }
+
+        private void radioFilterByDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFilterByDate.Checked == false)
+            {
+                dtpDateSaved.Enabled = false;
+            }
+            else
+            {
+                dtpDateSaved.Enabled = true;
+            }
         }
     }
 }

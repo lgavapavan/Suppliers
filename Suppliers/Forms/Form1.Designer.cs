@@ -34,17 +34,17 @@
             this.picNewSupplier = new System.Windows.Forms.PictureBox();
             this.picNewCompany = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picExit = new System.Windows.Forms.PictureBox();
             this.lblCompaniesList = new System.Windows.Forms.Label();
             this.picCompaniesList = new System.Windows.Forms.PictureBox();
             this.lblSuppliersList = new System.Windows.Forms.Label();
             this.picSuppliersList = new System.Windows.Forms.PictureBox();
-            this.picExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picNewSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewCompany)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompaniesList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSuppliersList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewCompany
@@ -97,6 +97,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.picExit);
             this.panel1.Controls.Add(this.lblCompaniesList);
             this.panel1.Controls.Add(this.picCompaniesList);
@@ -112,6 +113,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(570, 278);
             this.panel1.TabIndex = 9;
+            // 
+            // picExit
+            // 
+            this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
+            this.picExit.Location = new System.Drawing.Point(252, 216);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(67, 50);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExit.TabIndex = 16;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // lblCompaniesList
             // 
@@ -161,18 +174,6 @@
             this.picSuppliersList.TabStop = false;
             this.picSuppliersList.Click += new System.EventHandler(this.picSuppliersList_Click);
             // 
-            // picExit
-            // 
-            this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
-            this.picExit.Location = new System.Drawing.Point(252, 216);
-            this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(67, 50);
-            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExit.TabIndex = 16;
-            this.picExit.TabStop = false;
-            this.picExit.Click += new System.EventHandler(this.picExit_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,9 +189,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picNewCompany)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompaniesList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSuppliersList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
 
         }
