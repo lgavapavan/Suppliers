@@ -48,73 +48,6 @@ namespace Suppliers.Forms
             dgvPhones.DataSource = LoadPhones();
         }
 
-        private void picSaveSupplier_Click(object sender, EventArgs e)
-        {
-            if (ValidateSupplier())
-            {
-                if (this.IsIndividualEntity) //If it's an individual entity
-                {
-                    if (IndividualEntity.IsFromPR(this.SelectedCompany)) //And the company it attends is from PR
-                    {
-                        if (IndividualEntity.HasLegalAge(dtpBirthDate.Value.Date)) //Check if it is at least 18 y/o
-                        {
-                            if (this.IndividualEntities != null)
-                            {
-                                var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
-                                individualSuppliers.Add(SaveIndividualEntitySupplier());
-                                this.IndividualEntities = individualSuppliers;
-                                this.Close();
-                            }
-                            else
-                            {
-                                var individualSuppliers = new List<IndividualEntity>();
-                                individualSuppliers.Add(SaveIndividualEntitySupplier());
-                                this.IndividualEntities = individualSuppliers;
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Individual entity suppliers must be at least 18 years old", "Supplier not old enough", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else //else, if it is not from PR, there's no need to be 18 years old
-                    {
-                        if (this.IndividualEntities != null)
-                        {
-                            var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
-                            individualSuppliers.Add(SaveIndividualEntitySupplier());
-                            this.IndividualEntities = individualSuppliers;
-                            this.Close();
-                        }
-                        else
-                        {
-                            var individualSuppliers = new List<IndividualEntity>();
-                            individualSuppliers.Add(SaveIndividualEntitySupplier());
-                            this.IndividualEntities = individualSuppliers;
-                            this.Close();
-                        }
-                    }
-                }
-                else // else, if it is a legal entity supplier
-                {
-                    if (this.Suppliers != null)
-                    {
-                        var suppliers = new List<Supplier>(this.Suppliers);
-                        suppliers.Add(SaveLegalEntitySupplier());
-                        this.Suppliers = suppliers;
-                        this.Close();
-                    }
-                    else
-                    {
-                        var suppliers = new List<Supplier>();
-                        suppliers.Add(SaveLegalEntitySupplier());
-                        this.Suppliers = suppliers;
-                        this.Close();
-                    }
-                }
-            }
-        }
         private IndividualEntity SaveIndividualEntitySupplier()
         {
             IndividualEntity individualSupplier = new IndividualEntity(
@@ -252,6 +185,79 @@ namespace Suppliers.Forms
             {
                 throw new BlankFieldException("The following field is blank: {0}", fieldName);
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ValidateSupplier())
+            {
+                if (this.IsIndividualEntity) //If it's an individual entity
+                {
+                    if (IndividualEntity.IsFromPR(this.SelectedCompany)) //And the company it attends is from PR
+                    {
+                        if (IndividualEntity.HasLegalAge(dtpBirthDate.Value.Date)) //Check if it is at least 18 y/o
+                        {
+                            if (this.IndividualEntities != null)
+                            {
+                                var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
+                                individualSuppliers.Add(SaveIndividualEntitySupplier());
+                                this.IndividualEntities = individualSuppliers;
+                                this.Close();
+                            }
+                            else
+                            {
+                                var individualSuppliers = new List<IndividualEntity>();
+                                individualSuppliers.Add(SaveIndividualEntitySupplier());
+                                this.IndividualEntities = individualSuppliers;
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Individual entity suppliers must be at least 18 years old", "Supplier not old enough", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else //else, if it is not from PR, there's no need to be 18 years old
+                    {
+                        if (this.IndividualEntities != null)
+                        {
+                            var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
+                            individualSuppliers.Add(SaveIndividualEntitySupplier());
+                            this.IndividualEntities = individualSuppliers;
+                            this.Close();
+                        }
+                        else
+                        {
+                            var individualSuppliers = new List<IndividualEntity>();
+                            individualSuppliers.Add(SaveIndividualEntitySupplier());
+                            this.IndividualEntities = individualSuppliers;
+                            this.Close();
+                        }
+                    }
+                }
+                else // else, if it is a legal entity supplier
+                {
+                    if (this.Suppliers != null)
+                    {
+                        var suppliers = new List<Supplier>(this.Suppliers);
+                        suppliers.Add(SaveLegalEntitySupplier());
+                        this.Suppliers = suppliers;
+                        this.Close();
+                    }
+                    else
+                    {
+                        var suppliers = new List<Supplier>();
+                        suppliers.Add(SaveLegalEntitySupplier());
+                        this.Suppliers = suppliers;
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

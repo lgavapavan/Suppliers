@@ -34,27 +34,6 @@ namespace Suppliers.Forms
             this.comboFederativeUnit.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void picSaveCompany_Click(object sender, EventArgs e)
-        {
-            if (ValidateCompany())
-            {
-                if (this.Companies != null)
-                {
-                    var companies = new List<Company>(this.Companies);
-                    companies.Add(SaveCompany());
-                    this.Companies = companies;                
-                    this.Close();
-                }
-                else
-                {
-                    var companies = new List<Company>();
-                    companies.Add(SaveCompany());
-                    this.Companies = companies;
-                    this.Close();
-                }
-            }
-        }
-
         private Company SaveCompany()
         {
             FederativeUnits federativeUnit = new FederativeUnits();
@@ -95,6 +74,32 @@ namespace Suppliers.Forms
             {
                 throw new BlankFieldException("The following field is blank: {0}", fieldName);
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ValidateCompany())
+            {
+                if (this.Companies != null)
+                {
+                    var companies = new List<Company>(this.Companies);
+                    companies.Add(SaveCompany());
+                    this.Companies = companies;
+                    this.Close();
+                }
+                else
+                {
+                    var companies = new List<Company>();
+                    companies.Add(SaveCompany());
+                    this.Companies = companies;
+                    this.Close();
+                }
+            }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

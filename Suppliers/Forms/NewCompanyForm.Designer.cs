@@ -35,15 +35,20 @@
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblFederativeUnit = new System.Windows.Forms.Label();
             this.lblDocument = new System.Windows.Forms.Label();
-            this.picSaveCompany = new System.Windows.Forms.PictureBox();
-            this.lblSaveCompany = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveCompany)).BeginInit();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.panelTitle = new System.Windows.Forms.Panel();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picTitle = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCompanyName
             // 
             this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtCompanyName.Location = new System.Drawing.Point(219, 73);
+            this.txtCompanyName.Location = new System.Drawing.Point(219, 109);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(281, 29);
             this.txtCompanyName.TabIndex = 0;
@@ -51,7 +56,7 @@
             // txtDocument
             // 
             this.txtDocument.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtDocument.Location = new System.Drawing.Point(219, 133);
+            this.txtDocument.Location = new System.Drawing.Point(219, 169);
             this.txtDocument.Name = "txtDocument";
             this.txtDocument.Size = new System.Drawing.Size(281, 29);
             this.txtDocument.TabIndex = 1;
@@ -63,7 +68,7 @@
             this.comboFederativeUnit.FormattingEnabled = true;
             this.comboFederativeUnit.IntegralHeight = false;
             this.comboFederativeUnit.ItemHeight = 24;
-            this.comboFederativeUnit.Location = new System.Drawing.Point(219, 187);
+            this.comboFederativeUnit.Location = new System.Drawing.Point(219, 223);
             this.comboFederativeUnit.Name = "comboFederativeUnit";
             this.comboFederativeUnit.Size = new System.Drawing.Size(100, 32);
             this.comboFederativeUnit.TabIndex = 2;
@@ -72,11 +77,11 @@
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblCompanyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblCompanyName.Location = new System.Drawing.Point(43, 76);
+            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.lblCompanyName.Location = new System.Drawing.Point(39, 115);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(147, 24);
+            this.lblCompanyName.Size = new System.Drawing.Size(145, 23);
             this.lblCompanyName.TabIndex = 3;
             this.lblCompanyName.Text = "Company Name";
             // 
@@ -84,11 +89,11 @@
             // 
             this.lblFederativeUnit.AutoSize = true;
             this.lblFederativeUnit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFederativeUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblFederativeUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblFederativeUnit.Location = new System.Drawing.Point(43, 190);
+            this.lblFederativeUnit.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFederativeUnit.ForeColor = System.Drawing.Color.Black;
+            this.lblFederativeUnit.Location = new System.Drawing.Point(39, 229);
             this.lblFederativeUnit.Name = "lblFederativeUnit";
-            this.lblFederativeUnit.Size = new System.Drawing.Size(136, 24);
+            this.lblFederativeUnit.Size = new System.Drawing.Size(137, 23);
             this.lblFederativeUnit.TabIndex = 4;
             this.lblFederativeUnit.Text = "Federative Unit";
             // 
@@ -96,58 +101,102 @@
             // 
             this.lblDocument.AutoSize = true;
             this.lblDocument.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDocument.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblDocument.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblDocument.Location = new System.Drawing.Point(43, 133);
+            this.lblDocument.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocument.ForeColor = System.Drawing.Color.Black;
+            this.lblDocument.Location = new System.Drawing.Point(39, 172);
             this.lblDocument.Name = "lblDocument";
-            this.lblDocument.Size = new System.Drawing.Size(171, 24);
+            this.lblDocument.Size = new System.Drawing.Size(171, 23);
             this.lblDocument.TabIndex = 5;
             this.lblDocument.Text = "Document Number";
             // 
-            // picSaveCompany
+            // btnSave
             // 
-            this.picSaveCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSaveCompany.Image = ((System.Drawing.Image)(resources.GetObject("picSaveCompany.Image")));
-            this.picSaveCompany.Location = new System.Drawing.Point(261, 310);
-            this.picSaveCompany.Name = "picSaveCompany";
-            this.picSaveCompany.Size = new System.Drawing.Size(55, 41);
-            this.picSaveCompany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSaveCompany.TabIndex = 6;
-            this.picSaveCompany.TabStop = false;
-            this.picSaveCompany.Click += new System.EventHandler(this.picSaveCompany_Click);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(205, 305);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnSave.Size = new System.Drawing.Size(124, 51);
+            this.btnSave.TabIndex = 28;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblSaveCompany
+            // panelTitle
             // 
-            this.lblSaveCompany.AutoSize = true;
-            this.lblSaveCompany.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblSaveCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblSaveCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblSaveCompany.Location = new System.Drawing.Point(203, 316);
-            this.lblSaveCompany.Name = "lblSaveCompany";
-            this.lblSaveCompany.Size = new System.Drawing.Size(52, 24);
-            this.lblSaveCompany.TabIndex = 7;
-            this.lblSaveCompany.Text = "Save";
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.panelTitle.Controls.Add(this.picClose);
+            this.panelTitle.Controls.Add(this.picTitle);
+            this.panelTitle.Controls.Add(this.lblTitle);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(565, 57);
+            this.panelTitle.TabIndex = 29;
+            // 
+            // picClose
+            // 
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(507, 5);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(48, 48);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picClose.TabIndex = 20;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picTitle
+            // 
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(12, 8);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(57, 45);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 19;
+            this.picTitle.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Tai Le", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(75, 11);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(205, 37);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "New Company";
             // 
             // NewCompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(538, 368);
-            this.Controls.Add(this.lblSaveCompany);
-            this.Controls.Add(this.picSaveCompany);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(565, 368);
+            this.Controls.Add(this.panelTitle);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblDocument);
             this.Controls.Add(this.lblFederativeUnit);
             this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.comboFederativeUnit);
             this.Controls.Add(this.txtDocument);
             this.Controls.Add(this.txtCompanyName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewCompanyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewCompanyForm";
+            this.Text = "New Company";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewCompanyForm_FormClosed);
             this.Load += new System.EventHandler(this.NewCompanyForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picSaveCompany)).EndInit();
+            this.panelTitle.ResumeLayout(false);
+            this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +210,10 @@
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblFederativeUnit;
         private System.Windows.Forms.Label lblDocument;
-        private System.Windows.Forms.PictureBox picSaveCompany;
-        private System.Windows.Forms.Label lblSaveCompany;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel panelTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox picTitle;
+        private System.Windows.Forms.PictureBox picClose;
     }
 }

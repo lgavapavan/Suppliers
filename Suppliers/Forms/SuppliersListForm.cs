@@ -520,5 +520,10 @@ namespace Suppliers.Forms
                 dtpDateSaved.Enabled = true;
             }
         }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

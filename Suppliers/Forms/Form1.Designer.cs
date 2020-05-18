@@ -29,185 +29,269 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lblNewCompany = new System.Windows.Forms.Label();
-            this.lblNewSupplier = new System.Windows.Forms.Label();
-            this.picNewSupplier = new System.Windows.Forms.PictureBox();
-            this.picNewCompany = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNewSupplier = new System.Windows.Forms.Button();
+            this.btnSuppliersList = new System.Windows.Forms.Button();
+            this.btnCompaniesList = new System.Windows.Forms.Button();
+            this.btnNewCompany = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.lblCompaniesList = new System.Windows.Forms.Label();
-            this.picCompaniesList = new System.Windows.Forms.PictureBox();
-            this.lblSuppliersList = new System.Windows.Forms.Label();
-            this.picSuppliersList = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picNewSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNewCompany)).BeginInit();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.companiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openCompaniesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveNewSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openSuppliersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompaniesList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSuppliersList)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblNewCompany
-            // 
-            this.lblNewCompany.AutoSize = true;
-            this.lblNewCompany.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblNewCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblNewCompany.Location = new System.Drawing.Point(35, 64);
-            this.lblNewCompany.Name = "lblNewCompany";
-            this.lblNewCompany.Size = new System.Drawing.Size(135, 24);
-            this.lblNewCompany.TabIndex = 0;
-            this.lblNewCompany.Text = "New Company";
-            // 
-            // lblNewSupplier
-            // 
-            this.lblNewSupplier.AutoSize = true;
-            this.lblNewSupplier.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblNewSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblNewSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblNewSupplier.Location = new System.Drawing.Point(35, 137);
-            this.lblNewSupplier.Name = "lblNewSupplier";
-            this.lblNewSupplier.Size = new System.Drawing.Size(124, 24);
-            this.lblNewSupplier.TabIndex = 1;
-            this.lblNewSupplier.Text = "New Supplier";
-            // 
-            // picNewSupplier
-            // 
-            this.picNewSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picNewSupplier.Image = ((System.Drawing.Image)(resources.GetObject("picNewSupplier.Image")));
-            this.picNewSupplier.Location = new System.Drawing.Point(184, 124);
-            this.picNewSupplier.Name = "picNewSupplier";
-            this.picNewSupplier.Size = new System.Drawing.Size(67, 50);
-            this.picNewSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNewSupplier.TabIndex = 7;
-            this.picNewSupplier.TabStop = false;
-            this.picNewSupplier.Click += new System.EventHandler(this.picNewSupplier_Click);
-            // 
-            // picNewCompany
-            // 
-            this.picNewCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picNewCompany.Image = ((System.Drawing.Image)(resources.GetObject("picNewCompany.Image")));
-            this.picNewCompany.Location = new System.Drawing.Point(184, 51);
-            this.picNewCompany.Name = "picNewCompany";
-            this.picNewCompany.Size = new System.Drawing.Size(67, 50);
-            this.picNewCompany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNewCompany.TabIndex = 8;
-            this.picNewCompany.TabStop = false;
-            this.picNewCompany.Click += new System.EventHandler(this.picNewCompany_Click);
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnNewSupplier);
+            this.panel1.Controls.Add(this.btnSuppliersList);
+            this.panel1.Controls.Add(this.btnCompaniesList);
+            this.panel1.Controls.Add(this.btnNewCompany);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picExit);
-            this.panel1.Controls.Add(this.lblCompaniesList);
-            this.panel1.Controls.Add(this.picCompaniesList);
-            this.panel1.Controls.Add(this.lblSuppliersList);
-            this.panel1.Controls.Add(this.picSuppliersList);
-            this.panel1.Controls.Add(this.lblNewCompany);
-            this.panel1.Controls.Add(this.picNewCompany);
-            this.panel1.Controls.Add(this.lblNewSupplier);
-            this.panel1.Controls.Add(this.picNewSupplier);
+            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(570, 278);
+            this.panel1.Size = new System.Drawing.Size(596, 340);
             this.panel1.TabIndex = 9;
+            // 
+            // btnNewSupplier
+            // 
+            this.btnNewSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(133)))), ((int)(((byte)(143)))));
+            this.btnNewSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNewSupplier.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnNewSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSupplier.Image")));
+            this.btnNewSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewSupplier.Location = new System.Drawing.Point(21, 222);
+            this.btnNewSupplier.Name = "btnNewSupplier";
+            this.btnNewSupplier.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnNewSupplier.Size = new System.Drawing.Size(220, 73);
+            this.btnNewSupplier.TabIndex = 27;
+            this.btnNewSupplier.Text = "New Suppliers";
+            this.btnNewSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewSupplier.UseVisualStyleBackColor = false;
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            // 
+            // btnSuppliersList
+            // 
+            this.btnSuppliersList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(133)))), ((int)(((byte)(143)))));
+            this.btnSuppliersList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSuppliersList.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppliersList.ForeColor = System.Drawing.Color.White;
+            this.btnSuppliersList.Image = ((System.Drawing.Image)(resources.GetObject("btnSuppliersList.Image")));
+            this.btnSuppliersList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuppliersList.Location = new System.Drawing.Point(343, 222);
+            this.btnSuppliersList.Name = "btnSuppliersList";
+            this.btnSuppliersList.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnSuppliersList.Size = new System.Drawing.Size(220, 73);
+            this.btnSuppliersList.TabIndex = 26;
+            this.btnSuppliersList.Text = "Suppliers List";
+            this.btnSuppliersList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuppliersList.UseVisualStyleBackColor = false;
+            this.btnSuppliersList.Click += new System.EventHandler(this.btnSuppliersList_Click);
+            // 
+            // btnCompaniesList
+            // 
+            this.btnCompaniesList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(133)))), ((int)(((byte)(143)))));
+            this.btnCompaniesList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCompaniesList.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompaniesList.ForeColor = System.Drawing.Color.White;
+            this.btnCompaniesList.Image = ((System.Drawing.Image)(resources.GetObject("btnCompaniesList.Image")));
+            this.btnCompaniesList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCompaniesList.Location = new System.Drawing.Point(343, 129);
+            this.btnCompaniesList.Name = "btnCompaniesList";
+            this.btnCompaniesList.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnCompaniesList.Size = new System.Drawing.Size(220, 73);
+            this.btnCompaniesList.TabIndex = 25;
+            this.btnCompaniesList.Text = "Companies List";
+            this.btnCompaniesList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompaniesList.UseVisualStyleBackColor = false;
+            this.btnCompaniesList.Click += new System.EventHandler(this.btnCompaniesList_Click);
+            // 
+            // btnNewCompany
+            // 
+            this.btnNewCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(133)))), ((int)(((byte)(143)))));
+            this.btnNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNewCompany.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCompany.ForeColor = System.Drawing.Color.White;
+            this.btnNewCompany.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCompany.Image")));
+            this.btnNewCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewCompany.Location = new System.Drawing.Point(21, 129);
+            this.btnNewCompany.Name = "btnNewCompany";
+            this.btnNewCompany.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnNewCompany.Size = new System.Drawing.Size(220, 73);
+            this.btnNewCompany.TabIndex = 24;
+            this.btnNewCompany.Text = "New Company";
+            this.btnNewCompany.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewCompany.UseVisualStyleBackColor = false;
+            this.btnNewCompany.Click += new System.EventHandler(this.btnNewCompany_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(88, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Tai Le", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.Location = new System.Drawing.Point(156, 57);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(304, 37);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "Suppliers List Software";
             // 
             // picExit
             // 
+            this.picExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
             this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
-            this.picExit.Location = new System.Drawing.Point(252, 216);
+            this.picExit.Location = new System.Drawing.Point(551, -2);
             this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(67, 50);
+            this.picExit.Size = new System.Drawing.Size(44, 35);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picExit.TabIndex = 16;
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
-            // lblCompaniesList
+            // menuStrip1
             // 
-            this.lblCompaniesList.AutoSize = true;
-            this.lblCompaniesList.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblCompaniesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblCompaniesList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblCompaniesList.Location = new System.Drawing.Point(295, 64);
-            this.lblCompaniesList.Name = "lblCompaniesList";
-            this.lblCompaniesList.Size = new System.Drawing.Size(138, 24);
-            this.lblCompaniesList.TabIndex = 12;
-            this.lblCompaniesList.Text = "Companies List";
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.companiesToolStripMenuItem,
+            this.suppliersToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(594, 33);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // picCompaniesList
+            // companiesToolStripMenuItem
             // 
-            this.picCompaniesList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCompaniesList.Image = ((System.Drawing.Image)(resources.GetObject("picCompaniesList.Image")));
-            this.picCompaniesList.Location = new System.Drawing.Point(444, 51);
-            this.picCompaniesList.Name = "picCompaniesList";
-            this.picCompaniesList.Size = new System.Drawing.Size(67, 50);
-            this.picCompaniesList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCompaniesList.TabIndex = 15;
-            this.picCompaniesList.TabStop = false;
-            this.picCompaniesList.Click += new System.EventHandler(this.picCompaniesList_Click);
+            this.companiesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.companiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveNewCompanyToolStripMenuItem,
+            this.openCompaniesListToolStripMenuItem});
+            this.companiesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.companiesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.companiesToolStripMenuItem.Name = "companiesToolStripMenuItem";
+            this.companiesToolStripMenuItem.Size = new System.Drawing.Size(118, 29);
+            this.companiesToolStripMenuItem.Text = "Companies";
             // 
-            // lblSuppliersList
+            // saveNewCompanyToolStripMenuItem
             // 
-            this.lblSuppliersList.AutoSize = true;
-            this.lblSuppliersList.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblSuppliersList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblSuppliersList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
-            this.lblSuppliersList.Location = new System.Drawing.Point(295, 137);
-            this.lblSuppliersList.Name = "lblSuppliersList";
-            this.lblSuppliersList.Size = new System.Drawing.Size(121, 24);
-            this.lblSuppliersList.TabIndex = 13;
-            this.lblSuppliersList.Text = "Suppliers List";
+            this.saveNewCompanyToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.saveNewCompanyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.saveNewCompanyToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.saveNewCompanyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveNewCompanyToolStripMenuItem.Image")));
+            this.saveNewCompanyToolStripMenuItem.Name = "saveNewCompanyToolStripMenuItem";
+            this.saveNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(255, 30);
+            this.saveNewCompanyToolStripMenuItem.Text = "Save new company";
+            this.saveNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.saveNewCompanyToolStripMenuItem_Click);
             // 
-            // picSuppliersList
+            // openCompaniesListToolStripMenuItem
             // 
-            this.picSuppliersList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSuppliersList.Image = ((System.Drawing.Image)(resources.GetObject("picSuppliersList.Image")));
-            this.picSuppliersList.Location = new System.Drawing.Point(444, 124);
-            this.picSuppliersList.Name = "picSuppliersList";
-            this.picSuppliersList.Size = new System.Drawing.Size(67, 50);
-            this.picSuppliersList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSuppliersList.TabIndex = 14;
-            this.picSuppliersList.TabStop = false;
-            this.picSuppliersList.Click += new System.EventHandler(this.picSuppliersList_Click);
+            this.openCompaniesListToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.openCompaniesListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.openCompaniesListToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.openCompaniesListToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openCompaniesListToolStripMenuItem.Image")));
+            this.openCompaniesListToolStripMenuItem.Name = "openCompaniesListToolStripMenuItem";
+            this.openCompaniesListToolStripMenuItem.Size = new System.Drawing.Size(255, 30);
+            this.openCompaniesListToolStripMenuItem.Text = "Open companies list";
+            this.openCompaniesListToolStripMenuItem.Click += new System.EventHandler(this.openCompaniesListToolStripMenuItem_Click);
+            // 
+            // suppliersToolStripMenuItem
+            // 
+            this.suppliersToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveNewSupplierToolStripMenuItem,
+            this.openSuppliersListToolStripMenuItem});
+            this.suppliersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.suppliersToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            // 
+            // saveNewSupplierToolStripMenuItem
+            // 
+            this.saveNewSupplierToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.saveNewSupplierToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.saveNewSupplierToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveNewSupplierToolStripMenuItem.Image")));
+            this.saveNewSupplierToolStripMenuItem.Name = "saveNewSupplierToolStripMenuItem";
+            this.saveNewSupplierToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.saveNewSupplierToolStripMenuItem.Text = "Save new supplier";
+            this.saveNewSupplierToolStripMenuItem.Click += new System.EventHandler(this.saveNewSupplierToolStripMenuItem_Click);
+            // 
+            // openSuppliersListToolStripMenuItem
+            // 
+            this.openSuppliersListToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.openSuppliersListToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.openSuppliersListToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openSuppliersListToolStripMenuItem.Image")));
+            this.openSuppliersListToolStripMenuItem.Name = "openSuppliersListToolStripMenuItem";
+            this.openSuppliersListToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
+            this.openSuppliersListToolStripMenuItem.Text = "Open suppliers list";
+            this.openSuppliersListToolStripMenuItem.Click += new System.EventHandler(this.openSuppliersListToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(570, 278);
+            this.ClientSize = new System.Drawing.Size(596, 340);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.picNewSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNewCompany)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompaniesList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSuppliersList)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNewCompany;
-        private System.Windows.Forms.Label lblNewSupplier;
-        private System.Windows.Forms.PictureBox picNewSupplier;
-        private System.Windows.Forms.PictureBox picNewCompany;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblCompaniesList;
-        private System.Windows.Forms.PictureBox picCompaniesList;
-        private System.Windows.Forms.Label lblSuppliersList;
-        private System.Windows.Forms.PictureBox picSuppliersList;
         private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem companiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveNewCompanyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openCompaniesListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveNewSupplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openSuppliersListToolStripMenuItem;
+        private System.Windows.Forms.Button btnNewCompany;
+        private System.Windows.Forms.Button btnCompaniesList;
+        private System.Windows.Forms.Button btnNewSupplier;
+        private System.Windows.Forms.Button btnSuppliersList;
     }
 }
 
