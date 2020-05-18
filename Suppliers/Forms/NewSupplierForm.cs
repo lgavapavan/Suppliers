@@ -40,12 +40,45 @@ namespace Suppliers.Forms
 
         private void picSavePhone_Click(object sender, EventArgs e)
         {
-            Phone phone = new Phone(byte.Parse(txtAreaCode.Text), txtPhone.Text);
-            this.Phones.Add(phone);
-            dgvPhones.DataSource = null;
-            txtAreaCode.Clear();
-            txtPhone.Clear();
-            dgvPhones.DataSource = LoadPhones();
+            if(ValidatePhone(txtAreaCode.Text, txtPhone.Text))
+            {
+                Phone phone = new Phone(byte.Parse(txtAreaCode.Text), txtPhone.Text);
+                this.Phones.Add(phone);
+                dgvPhones.DataSource = null;
+                txtAreaCode.Clear();
+                txtPhone.Clear();
+                dgvPhones.DataSource = LoadPhones();
+            }
+        }
+
+        private bool ValidatePhone(string areaCode, string phone)
+        {
+            //phone must not be empty
+            //area code must be byte 
+            //areacode must not be empty
+            try
+            {
+                IsEmpty(areaCode, "Area code");
+                IsEmpty(phone, "Phone number");
+                IsAreaCodeFormatted(areaCode);
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Failed to save this phone.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private void IsAreaCodeFormatted(string areaCode)
+        {
+            byte number;
+            bool success = byte.TryParse(areaCode, out number);
+            if (!success)
+            {
+                throw new AreaCodeException();
+            }
+
         }
 
         private IndividualEntity SaveIndividualEntitySupplier()
@@ -211,6 +244,7 @@ namespace Suppliers.Forms
                                 var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
                                 individualSuppliers.Add(SaveIndividualEntitySupplier());
                                 this.IndividualEntities = individualSuppliers;
+                                MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
@@ -218,6 +252,7 @@ namespace Suppliers.Forms
                                 var individualSuppliers = new List<IndividualEntity>();
                                 individualSuppliers.Add(SaveIndividualEntitySupplier());
                                 this.IndividualEntities = individualSuppliers;
+                                MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                         }
@@ -233,6 +268,7 @@ namespace Suppliers.Forms
                             var individualSuppliers = new List<IndividualEntity>(this.IndividualEntities);
                             individualSuppliers.Add(SaveIndividualEntitySupplier());
                             this.IndividualEntities = individualSuppliers;
+                            MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
@@ -240,6 +276,7 @@ namespace Suppliers.Forms
                             var individualSuppliers = new List<IndividualEntity>();
                             individualSuppliers.Add(SaveIndividualEntitySupplier());
                             this.IndividualEntities = individualSuppliers;
+                            MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                     }
@@ -251,6 +288,7 @@ namespace Suppliers.Forms
                         var suppliers = new List<Supplier>(this.Suppliers);
                         suppliers.Add(SaveLegalEntitySupplier());
                         this.Suppliers = suppliers;
+                        MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
@@ -258,6 +296,7 @@ namespace Suppliers.Forms
                         var suppliers = new List<Supplier>();
                         suppliers.Add(SaveLegalEntitySupplier());
                         this.Suppliers = suppliers;
+                        MessageBox.Show("Supplier saved successfully!", "Supplier saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }

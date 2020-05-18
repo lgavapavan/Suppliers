@@ -65,6 +65,7 @@
     <Compile Include="Entities\Document.cs" />
     <Compile Include="Entities\Enums\DocumentTypes.cs" />
     <Compile Include="Entities\Enums\FederativeUnits.cs" />
+    <Compile Include="Entities\Exceptions\AreaCodeException.cs" />
     <Compile Include="Entities\Exceptions\BlankFieldException.cs" />
     <Compile Include="Entities\Exceptions\NoPhoneException.cs" />
     <Compile Include="Entities\IndividualEntity.cs" />

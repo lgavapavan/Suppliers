@@ -85,6 +85,7 @@ namespace Suppliers.Forms
                     var companies = new List<Company>(this.Companies);
                     companies.Add(SaveCompany());
                     this.Companies = companies;
+                    MessageBox.Show("Company saved successfully!", "Company saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
@@ -92,6 +93,7 @@ namespace Suppliers.Forms
                     var companies = new List<Company>();
                     companies.Add(SaveCompany());
                     this.Companies = companies;
+                    MessageBox.Show("Company saved successfully!", "Company saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
