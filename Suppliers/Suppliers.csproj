@@ -66,6 +66,7 @@
     <Compile Include="Entities\Enums\DocumentTypes.cs" />
     <Compile Include="Entities\Enums\FederativeUnits.cs" />
     <Compile Include="Entities\Exceptions\BlankFieldException.cs" />
+    <Compile Include="Entities\Exceptions\NoPhoneException.cs" />
     <Compile Include="Entities\IndividualEntity.cs" />
     <Compile Include="Entities\Phone.cs" />
     <Compile Include="Entities\Supplier.cs" />

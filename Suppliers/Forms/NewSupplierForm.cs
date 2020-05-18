@@ -170,6 +170,7 @@ namespace Suppliers.Forms
                 {
                     IsEmpty(txtRg.Text, "RG");
                 }
+                HasPhone(this.Phones);
                 return true;
             }
             catch (Exception e)
@@ -184,6 +185,14 @@ namespace Suppliers.Forms
             if (text.Trim() == "")
             {
                 throw new BlankFieldException("The following field is blank: {0}", fieldName);
+            }
+        }
+
+        private void HasPhone(List<Phone> phones)
+        {
+            if (!phones.Any())
+            {
+                throw new NoPhoneException("You need to save at least one phone for this supplier.");
             }
         }
 
